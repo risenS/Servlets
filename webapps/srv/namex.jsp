@@ -3,8 +3,12 @@
     <head>
         <meta charset=utf8>
     </head><body>
+        
 <div>
-    
+    <h1>This is the Home Page</h1>
+</div>
+        
+<div>
 <% if( request.getSession().getAttribute("name") == null ) { %>
     You are not logged in.
 <% } else { %>
