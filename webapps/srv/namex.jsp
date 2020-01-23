@@ -10,7 +10,7 @@
         
 <div>
 <% if( request.getSession().getAttribute("name") == null ) { %>
-    You are not logged in.
+    You are not logged in.  Login or create an account through the sign-up page.
 <% } else { %>
     <!-- in HTML, we can expand a session variable with the {} notation -->
     You are logged in as: ${name}

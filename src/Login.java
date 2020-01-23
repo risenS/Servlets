@@ -26,18 +26,22 @@ public class Login extends HttpServlet
         int index = -1;
         for(int i=0; i < SignUp.account_list.size(); i++)
         {
-            if(SignUp.account_list[i].username = Name && SignUp.account_list[i].password = Pass)
+            if(SignUp.account_list.get(i).username.equals(Name) && SignUp.account_list.get(i).password.equals(Pass))
             {
                 index = i;
+                pw.printf("Success!");
                 break;
             }
         }
         
         if(index > -1) {
             var sess = req.getSession();
-            sess.setAttribute("name", Name );
+            sess.setAttribute("name", SignUp.account_list.get(index).username );
             pw.printf("Logged in as "+Name);
         }
+        
+        else
+            pw.printf("Account Not Found! Wrong password or username entered!");
     }
 
 }
